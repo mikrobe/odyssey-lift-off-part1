@@ -23,10 +23,10 @@ const TrackDetail = ({ track }) => {
     title,
     description,
     thumbnail,
-    author,
+    writtenBy: author,
     length,
     modulesCount,
-    modules,
+    hasPart: modules,
     numberOfViews,
   } = track;
 
