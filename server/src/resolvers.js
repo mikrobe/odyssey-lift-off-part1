@@ -10,6 +10,27 @@ export const resolvers = {
             return dataSources.trackAPI.getTrack(id);
         }
     },
+    Mutation: {
+        // increments a track's numberOfViews property
+        incrementTrackViews: async (_, {id}, {dataSources}) => {
+            try {
+                const track = await dataSources.trackAPI.incrementTrackViews(id);
+                return {
+                    code: 200,
+                    success: true,
+                    message: `Successfully incremented number of views for track ${id}`,
+                    track
+                };
+            } catch (error) {
+                return {
+                    code: error.extensions.response.status,
+                    success: false,
+                    message: error.extensions.response.body,
+                    track: null
+                }
+            };
+        }
+    },
     Track: {
         // authorId is the property of the object returned by 'tracks' REST call
         writtenBy: ({authorId}, _, {dataSources}) => {
