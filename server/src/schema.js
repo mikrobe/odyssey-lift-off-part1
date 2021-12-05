@@ -33,8 +33,10 @@ type Track {
     writtenBy: Author!
 "visually represented with"
     thumbnail: String
-"how many chars?"
-    length: Int
+    "track's length in seconds"
+    length: Int @deprecated(reason: "Use durationInSeconds")
+"the track's full duration in seconds"
+    durationInSeconds: Int
 "number of contained modules"
     modulesCount: Int
 "long description"
@@ -57,8 +59,10 @@ type Module {
     id: ID!
     "the module's title"
     title: String!
-    "the module's length in minutes"
-    length: Int
+    "the module's length in seconds"
+    length: Int @deprecated(reason: "Use durationInSeconds")
+    "the module's full duration in seconds"
+    durationInSeconds: Int
 }
 `;
 

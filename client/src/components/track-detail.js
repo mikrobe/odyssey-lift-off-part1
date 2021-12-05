@@ -24,7 +24,7 @@ const TrackDetail = ({ track }) => {
     description,
     thumbnail,
     writtenBy: author,
-    length,
+    durationInSeconds: length,
     modulesCount,
     hasPart: modules,
     numberOfViews,
@@ -78,7 +78,7 @@ const TrackDetail = ({ track }) => {
                 <li key={module.title}>
                   <div>{module.title}</div>
                   <ModuleLength>
-                    {humanReadableTimeFromSeconds(module.length)}
+                    {humanReadableTimeFromSeconds(module.durationInSeconds)}
                   </ModuleLength>
                 </li>
               ))}

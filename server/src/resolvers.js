@@ -39,7 +39,11 @@ export const resolvers = {
         // get the list of modules of the track
         hasPart: ({id}, _, {dataSources}) => {
             return dataSources.trackAPI.getTrackModules(id);
-        }
-    }
+        },
+        durationInSeconds: ({length}) => length,
+    },
+    Module: {
+        durationInSeconds: ({length}) => length,
+    },
 };
 

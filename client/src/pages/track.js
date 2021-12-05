@@ -13,13 +13,13 @@ const GET_TRACK = gql`
             photo
         }
         thumbnail
-        length
+        durationInSeconds
         modulesCount
         numberOfViews
         hasPart {
             id
             title
-            length
+            durationInSeconds
         }
         description
         }

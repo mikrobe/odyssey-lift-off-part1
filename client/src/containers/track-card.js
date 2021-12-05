@@ -24,7 +24,7 @@ mutation IncrementTrackViews($incrementTrackViewsId: ID!) {
  * for each track populating the tracks grid homepage.
  */
 const TrackCard = ({ track }) => {
-  const { title, thumbnail, writtenBy: author, length, modulesCount, id } = track;
+  const { title, thumbnail, writtenBy: author, durationInSeconds: length, modulesCount, id } = track;
 
   const [incrementTrackViews] = useMutation(INCREMENT_TRACK_VIEWS, {
     variables: { incrementTrackViewsId: id}, 
