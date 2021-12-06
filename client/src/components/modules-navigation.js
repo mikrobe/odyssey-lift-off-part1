@@ -9,6 +9,7 @@ import { humanReadableTimeFromSeconds } from '../utils/helpers';
  * from a track and navigates to the modules page
  */
 const ModulesNav = ({ module, track }) => {
+  const { hasPart: modules } = track;
   return (
     <ModulesNavContainer>
       <ModuleTitle>
@@ -17,7 +18,7 @@ const ModulesNav = ({ module, track }) => {
         </h4>
       </ModuleTitle>
       <ModulesList>
-        {track.modules.map((navModule) => (
+        {modules.map((navModule) => (
           <ModuleListItem key={`module_${navModule.id}`}>
             <div>
               <ModuleNavStyledLink to={`../${navModule.id}`}>
